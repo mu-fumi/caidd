@@ -16,46 +16,21 @@ const LoginHeader = ({ dispatch, keys }) => {
   return (
     <div className='login-header'>
       <div className="logo">
-        <p>财多多</p>
-        <p>CAIDUODUO.COM</p>
+        <div>
+          <p>财多多</p>
+          <p>CAIDUODUO.COM</p>
+        </div>
+        <div className="con-lib">企业端</div>
       </div>
-      <div className="">企业端</div>
-      <div className="">
+      <div className="login-header-right">
         <ul>
           <li>我要申诉</li>
           <li>
             <span>个人</span>
-            <span>企业</span>
+            <span className='actived'>企业</span>
           </li>
         </ul>
       </div>
-
-
-
-
-
-      <Menu
-        onClick={handleClick}
-        selectedKeys={keys}
-        mode="horizontal"
-      >
-
-
-
-
-        <Menu.Item key="node" disabled>
-          <Icon type="tag" />CNODE
-        </Menu.Item>
-
-        <Menu.Item key="search">
-          <Search
-            placeholder="input search text"
-            onSearch={value => console.log(value)}
-            enterButton
-          />
-        </Menu.Item>
-
-      </Menu>
 
 
 

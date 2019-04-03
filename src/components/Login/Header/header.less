@@ -1,4 +1,74 @@
-.login-header{
-  overflow: hidden;
-  margin-top: 160px;
+.login-header {
+    overflow: hidden;
+    margin-top: 160px;
+    margin-left: 490px;
+    margin-right: 230px;
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+        text-align: right;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        >div {
+            padding-right: 28px;
+
+            p {
+                color: #FF9421;
+                margin: 0;
+                font-family: 'STHupo';
+                font-size: 20px;
+            }
+        }
+
+        .con-lib {
+            border-left: 1px solid;
+            padding-left: 28px;
+            font-size: 18px;
+        }
+    }
+
+    .login-header-right {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            li {
+                padding: 0 22px;
+                font-size: 18px;
+
+                span {
+                    display: inline-block;
+                    background: #F2F2F2;
+                    padding: 2px 15px;
+                    cursor: pointer;
+                }
+
+                span:first-child {
+                    border-radius: 4px 0px 0px 4px
+                }
+
+                span:last-child {
+                    border-radius: 0px 4px 4px 0px;
+                }
+
+                span.actived {
+                    background: #FF9421;
+                    color: #fff;
+                }
+
+            }
+
+            li:first-child {
+                border-right: 1px solid;
+            }
+        }
+    }
 }
