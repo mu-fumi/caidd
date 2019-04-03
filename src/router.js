@@ -1,12 +1,22 @@
 import React from 'react';
-import { Router, Route, Switch } from 'dva/router';
-import IndexPage from './routes/IndexPage';
+import { Router, Route, Switch,Redirect  } from 'dva/router';
+import dynamic from 'dva/dynamic'
+
+import NProgress from 'nprogress';
+
 
 function RouterConfig({ history, app }) {
+  NProgress.start()
+
+  const Login = dynamic({
+    app,
+    component: () => require('./container/Login'),
+  })
+
   return (
     <Router history={history}>
       <Switch>
-        <Route path="/" exact component={IndexPage} />
+        <Route path="/login" exact component={Login} />
       </Switch>
     </Router>
   );
