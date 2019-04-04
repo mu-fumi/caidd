@@ -1,18 +1,10 @@
 import React from 'react';
-import { Menu, Icon, Input } from 'antd';
 import PropTypes from 'prop-types';
 import  './footer.less';
 
-const Search = Input.Search;
 
 
 const LoginFooter = ({ dispatch, keys }) => {
-
-  function handleClick(e) {
-    console.log(e.key);
-  }
-
-
   return (
     <div className='login-footer'>
         <p>Copyright © 2019 CDD. All Rights Reserved.</p>
