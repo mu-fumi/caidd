@@ -12,10 +12,24 @@ function RouterConfig({ history, app }) {
     component: () => require('./container/Login'),
   })
 
+  const Reg = dynamic({
+    app,
+    component: () => require('./container/Reg'),
+  })
+
+  const ForgetPassword = dynamic({
+    app,
+    component: () => require('./container/ForgetPassword'),
+  })
+
+
+
   return (
     <Router history={history}>
       <Switch>
         <Route path="/login" exact component={Login} />
+        <Route path="/reg" exact component={Reg} />
+        <Route path="/forgetpwd" exact component={ForgetPassword} />
       </Switch>
     </Router>
   );
