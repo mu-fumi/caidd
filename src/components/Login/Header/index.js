@@ -1,28 +1,26 @@
 import React from 'react';
-import { Menu, Icon, Input, Row, Col, Modal, Button } from 'antd';
-import PropTypes from 'prop-types';
+import { Row, Col, } from 'antd';
+import { connect } from 'dva';
 import './header.less';
-
 
 
 const DemoBox = props => <p className={`height-${props.value}`}>{props.children}</p>;
 
-
-const Search = Input.Search;
-
-
-const LoginHeader = ({ dispatch,  }) => {
+const LoginHeader = ({ dispatch, visible, title }) => {
 
   const showModal = () => {
-    this.setState({
-      visible: true,
-    });
+    dispatch({
+      type: 'login/changeModal',
+      payload: {
+        visible: true,
+        title:'我要申诉'
+      }
+    })
   }
-  const hideModal = () => {
-    this.setState({
-      visible: false,
-    });
-  }
+
+
+
+
   return (
 
     <Row type="flex" justify="center" align="middle" className='login-header'>
@@ -44,7 +42,7 @@ const LoginHeader = ({ dispatch,  }) => {
       <Col span={8}>
         <div className="login-header-right">
           <ul>
-            <li onClick={showModal}>我要申诉</li>
+            <li onClick={(e) =>  showModal() }>我要申诉</li>
             <li>
               <span>个人</span>
               <span className='actived'>企业</span>
@@ -54,18 +52,7 @@ const LoginHeader = ({ dispatch,  }) => {
       </Col>
 
 
-      <Modal
-          title="Modal"
-          visible={this.state.visible}
-          onOk={this.hideModal}
-          onCancel={this.hideModal}
-          okText="确认"
-          cancelText="取消"
-        >
-          <p>Bla bla ...</p>
-          <p>Bla bla ...</p>
-          <p>Bla bla ...</p>
-        </Modal>
+
 
 
     </Row>
@@ -75,8 +62,15 @@ const LoginHeader = ({ dispatch,  }) => {
   );
 };
 
-LoginHeader.propTypes = {
-  
-};
 
-export default LoginHeader;
+function mapStateToProps(state) {
+  const { visible, title } = state;
+  return {
+    visible,
+    title
+  };
+}
+
+
+
+export default connect(mapStateToProps)(LoginHeader);

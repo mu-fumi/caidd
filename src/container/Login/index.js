@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'dva';
-import {Link} from 'dva/router';
+import { Link } from 'dva/router';
 import LoginHeader from '@/components/Login/Header'
 import LoginFooter from '@/components/Login/Footer';
 import './login.less';
+import AppealModal from './AppealModal';
 
 import { Card, Col, Row, Form, Icon, Input, Button, Checkbox, } from 'antd';
 const { Meta } = Card;
@@ -19,25 +20,16 @@ class Login extends React.Component {
     }
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.props.form.validateFields((err, values) => {
-      if (!err) {
-        console.log('Received values of form: ', values);
-      }
-    });
-  }
-
   render() {
     const { getFieldDecorator } = this.props.form;
 
     return (
       <React.Fragment>
-        <LoginHeader />
+        <LoginHeader showModal={this.showModal} />
 
         <Row type="flex" justify="center" align="middle">
           <Col span={10}><DemoBox value={100}></DemoBox></Col>
-          <Col span={7} style={{paddingLeft: 90}}>
+          <Col span={7} style={{ paddingLeft: 90 }}>
             <div className='login-card'>
 
               <Card title="登录" style={{ width: 430, height: 400 }}>
@@ -101,6 +93,7 @@ class Login extends React.Component {
 
         <LoginFooter />
 
+        <AppealModal />
       </React.Fragment >
     );
   }
