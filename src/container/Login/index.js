@@ -18,7 +18,16 @@ class Login extends React.Component {
     this.state = {
       loading: false
     }
+    this.createHandler = this.createHandler.bind(this)
   }
+
+  createHandler(values) {
+    this.props.dispatch({
+      type: 'login/createAppeal',
+      payload: values,
+    });
+  }
+
 
   render() {
     const { getFieldDecorator } = this.props.form;
@@ -93,7 +102,7 @@ class Login extends React.Component {
 
         <LoginFooter />
 
-        <AppealModal />
+        <AppealModal record={{}} PropsOnOk={ this.createHandler } />
       </React.Fragment >
     );
   }

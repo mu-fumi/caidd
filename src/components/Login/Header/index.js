@@ -13,13 +13,10 @@ const LoginHeader = ({ dispatch, visible, title }) => {
       type: 'login/changeModal',
       payload: {
         visible: true,
-        title:'我要申诉'
+        title: '我要申诉'
       }
     })
   }
-
-
-
 
   return (
 
@@ -42,7 +39,7 @@ const LoginHeader = ({ dispatch, visible, title }) => {
       <Col span={8}>
         <div className="login-header-right">
           <ul>
-            <li onClick={(e) =>  showModal() }>我要申诉</li>
+            <li onClick={(e) => showModal()}>我要申诉</li>
             <li>
               <span>个人</span>
               <span className='actived'>企业</span>
@@ -50,15 +47,7 @@ const LoginHeader = ({ dispatch, visible, title }) => {
           </ul>
         </div>
       </Col>
-
-
-
-
-
     </Row>
-
-
-
   );
 };
 
