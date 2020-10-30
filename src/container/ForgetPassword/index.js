@@ -29,7 +29,7 @@ class Login extends React.Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
-    // test  sakdjaksdk  sadasda
+    // test  666
 
     return (
       <React.Fragment>
